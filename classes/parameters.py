@@ -13,10 +13,8 @@ class parameters:
         self.ev_to_au         = 1.0 / self.au_to_ev
         #
         self.fwhm =  0.021 # FWHM in eV for emission spectra
-        #self.fwhm = 0.0135 # FWHM in eV
         #
-        #self.spectral_overlap = 0.17060418457226817 # ev-1 
-        self.spectral_overlap = 0.028547827685680437
+        self.spectral_overlap = 0.02968170793445411
         #
-        self.rescale_np_int = 100.0 # Rescale nanoparticle-acceptor interaction
+        self.rescale_np_int = 1.0 # Rescale nanoparticle-acceptor interaction
         #sys.exit()

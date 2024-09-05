@@ -18,10 +18,10 @@ class aceptor:
         #
         self.FQY    = np.zeros((n_pos,aceptor_states))    
         #
-        rad_quantum_efficiency_vac = 5.0e-5 # <= to that value For Ni-Pc 
+        rad_quantum_efficiency_vac = 0.3 # <= to that value For Zn-Pc 
                                             # as given in DOI: https://doi.org/10.1063/1.1676714
         #
-        rad_0 = 1.0 / (0.1111E-07 * param.sec_to_au)  # au-1. Value in s from ADF vacuum TDDFT calculation
+        rad_0 = 1.0 / (0.1087E-07 * param.sec_to_au)  # au-1. Value in s from ADF vacuum TDDFT calculation
         #
         self.nonrad_0  = rad_0 / rad_quantum_efficiency_vac - rad_0
         #
