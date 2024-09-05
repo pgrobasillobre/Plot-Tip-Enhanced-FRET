@@ -104,7 +104,7 @@ for position in positions:
 #
 #
 # -- Plot fluorescence Aceptor-Donor intensities
-output.plot_fluor_intensities(donor,aceptor,len(positions))
+output.plot_fluor_intensities(donor,aceptor,len(positions),positions)
 
 
 

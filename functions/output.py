@@ -15,7 +15,7 @@ def error(error_message):
     print("")
     sys.exit()
 # -------------------------------------------------------------------------------------
-def plot_fluor_intensities(donor,aceptor,n_pos):
+def plot_fluor_intensities(donor,aceptor,n_pos,positions):
     #
     """ Plot fluorescence intensities of donor and aceptor"""
     #
@@ -71,7 +71,7 @@ def plot_fluor_intensities(donor,aceptor,n_pos):
         total_gaussian = total_gaussian/norm
         # 
         # Plot
-        ax[n].set_title(f'pos-{n}')
+        ax[n].set_title(f'{positions[n]}')
         ax[n].plot(x_points,total_gaussian, color='red', label = '')
         #
 
