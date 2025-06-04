@@ -55,7 +55,7 @@ def extract_tddft(infile,labs=False,lrad=False,lnonrad=False):
 # -------------------------------------------------------------------------------------
 def extract_eet(infile):
     #
-    """ Extract A-D coulomb and A-NP interactions from FRET_Embedlab output"""
+    """ Extract A-D coulomb and A-NP interactions from FretLab output"""
     #
     # Check that file exists
     if not os.path.exists(infile): output.error("File " + infile + " not found")
@@ -72,14 +72,14 @@ def extract_eet(infile):
                 found_a_np_int = True
                 a_np_int = complex(float(line.split()[2]),float(line.split()[4]))
     #
-    if not found_a_d_int and not found_a_np_int: output.error("A-D coulombd and A-NP interactions not found in " + infile)
+    if not found_a_d_int and not found_a_np_int: output.error("A-D coulomb and A-NP interactions not found in " + infile)
     if not found_a_d_int:  output.error("A-D coulomb interaction not found in " + infile)
     if not found_a_np_int: output.error("A-NP interaction not found in " + infile)
     #
-    v_tot = (a_d_int + a_np_int*param.rescale_np_int) * param.au_to_ev # In eV
-    v_mod2 = (np.abs(v_tot))**2.0 # np.abs calculates the modulus of the complex number
+    v_tot = (a_d_int + a_np_int) * param.au_to_ev # In eV
+    v_mod2 = (np.abs(v_tot))**2.0                 # Calculate the modulus of the complex number
     #
-    gamma_eet = 2.0 * np.pi * (v_mod2 * param.spectral_overlap) * param.ev_to_au # In a.u.
+    gamma_eet = 2.0 * np.pi * (v_mod2 * param.spectral_overlap) * param.ev_to_au # Gamma_eet is read in a.u.
     #
     return(gamma_eet)
 

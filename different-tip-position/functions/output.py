@@ -2,7 +2,7 @@ import sys
 import numpy as np
 import matplotlib.pyplot as plt
 
-from classes import aceptor, donor, parameters
+from classes import acceptor, donor, parameters
 from functions import calcs
 
 param = parameters.parameters()
@@ -10,18 +10,18 @@ param = parameters.parameters()
 def error(error_message):
     print("")
     print("")
-    print("   " + error_message)
+    print("   ERROR: " + error_message)
     print("")
     print("")
     sys.exit()
 # -------------------------------------------------------------------------------------
-def plot_fluor_intensities(donor,aceptor,n_pos,positions):
+def plot_fluor_intensities(donor,acceptor,n_pos,positions):
     #
-    """ Plot fluorescence intensities of donor and aceptor"""
+    """ Plot fluorescence intensities of donor and acceptor"""
     #
     # Define plotting options
-    donor_peak   = 1.945 # eV emission peak
-    aceptor_peak = 1.902 # eV emission peak
+    donor_peak    = 1.945 # eV emission peak in experiment
+    acceptor_peak = 1.902 # eV emission peak in experiment
     #
     min_energy = 1.85 # eV
     max_energy = 2.00 # eV
@@ -49,24 +49,28 @@ def plot_fluor_intensities(donor,aceptor,n_pos,positions):
 
     ax[-1].set_xlabel(xlabel, fontsize=fontsize_labels, labelpad=10.0)
     
-    # Plot the values
+    # Check global normalization value
+    norm = 0
     for n in range(n_pos):
-        #
-        # Set limits
-        ax[n].set_xlim(min_energy,max_energy+0.001)
-        ax[n].set_ylim(0.0,1.0 + 0.1)
-        #
-        ax[n].set_xticks(np.arange(min_energy,max_energy+0.001,0.2))
-        ax[n].set_yticks(np.arange(0.0,1.1,0.5))
         #
         # Create Gaussian functions for plotting the fluorescence intensities
         donor_gaussian   = calcs.single_gaussian(x_points,grid_points,donor_peak,donor.fluor_int_total[n],    param.fwhm,min_energy,max_energy)
-        aceptor_gaussian = calcs.single_gaussian(x_points,grid_points,aceptor_peak,aceptor.fluor_int_total[n],param.fwhm,min_energy,max_energy)
+        acceptor_gaussian = calcs.single_gaussian(x_points,grid_points,acceptor_peak,acceptor.fluor_int_total[n],param.fwhm,min_energy,max_energy)
         #
         # Create total Gaussian and normalize
-        total_gaussian = donor_gaussian + aceptor_gaussian
+        total_gaussian = donor_gaussian + acceptor_gaussian
         #
-        norm = np.max(total_gaussian)
+        if np.max(total_gaussian) > norm: norm = np.max(total_gaussian)
+
+    # Plot the values
+    for n in range(n_pos):
+        #
+        # Create Gaussian functions for plotting the fluorescence intensities
+        donor_gaussian   = calcs.single_gaussian(x_points,grid_points,donor_peak,donor.fluor_int_total[n],    param.fwhm,min_energy,max_energy)
+        acceptor_gaussian = calcs.single_gaussian(x_points,grid_points,acceptor_peak,acceptor.fluor_int_total[n],param.fwhm,min_energy,max_energy)
+        #
+        # Create total Gaussian and normalize
+        total_gaussian = donor_gaussian + acceptor_gaussian
         #
         total_gaussian = total_gaussian/norm
         # 
@@ -75,6 +79,4 @@ def plot_fluor_intensities(donor,aceptor,n_pos,positions):
         ax[n].plot(x_points,total_gaussian, color='red', label = '')
         #
 
-    #
     plt.show()
-    #plt.savefig('/home/pablo/Desktop/plot.png')

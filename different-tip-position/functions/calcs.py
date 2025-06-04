@@ -1,11 +1,11 @@
 import sys
 import numpy as np
 
-from classes import donor, aceptor, eet
+from classes import donor, acceptor, eet
 # -------------------------------------------------------------------------------------
 def eta_EET(n_pos,d_state,a_state,EET,D,A):
     #
-    """Calculate EET efficiency (\eta_{EET})"""
+    """Calculate Electronic Energy Transfer (EET) efficiency"""
     #
     eet_efficiency = (EET.Gamma_EET[n_pos,d_state,a_state]/
                       (EET.Gamma_EET[n_pos,d_state,a_state] + 
@@ -17,7 +17,7 @@ def eta_EET(n_pos,d_state,a_state,EET,D,A):
 # -------------------------------------------------------------------------------------
 def single_gaussian(energies,grid_points, exc, osc, fwhm, min_energy, max_energy):
     #
-    """Define a Gaussian function to plot our peak"""
+    """Define a Gaussian function to plot our calculated fluorescence peak"""
     #
     # Shape of the gaussian: f(x) = (1 / (σ * √(2π))) * exp(-((x - μ)^2) / (2σ^2))
     # (weighted by oscillator strength)
