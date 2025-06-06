@@ -1,0 +1,19 @@
+sending incremental file list
+./
+change_name_pt-pc.sh
+generated_cube%TransDens_SS_A%Fitdensity_1.cub
+generated_cube%TransDens_SS_A%Fitdensity_2.cub
+generated_cube%TransDens_SS_A%Fitdensity_3.cub
+generated_cube%TransDens_SS_A%Fitdensity_4.cub
+generated_cube%TransDens_SS_A%Fitdensity_5.cub
+generated_cube%x values%x values.cub
+generated_cube%y values%y values.cub
+generated_cube%z values%z values.cub
+logfile
+pt-pc-pos6_-z_d_5.00.xyz
+pt-pc_cam-b3lyp_tzp.log
+pt-pc_cam-b3lyp_tzp.run
+run.sh
+
+sent 19,861,343 bytes  received 285 bytes  3,611,205.09 bytes/sec
+total size is 113,842,767  speedup is 5.73

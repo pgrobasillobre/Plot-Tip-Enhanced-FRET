@@ -1,0 +1,23 @@
+sending incremental file list
+./
+input.inp
+input.log
+run.sh
+debug/
+debug/aceptor_cube_points.xyz
+debug/aceptor_cube_points_ROTATED.xyz
+debug/donor_cube_points.xyz
+debug/donor_cube_points_ROTATED.xyz
+debug/np.xyz
+debug/np_im.nmd
+debug/np_re.nmd
+debug/np_rot.xyz
+debug/np_rot_im.nmd
+debug/np_rot_re.nmd
+debug/transition_dipole_aceptor.nmd
+debug/transition_dipole_aceptor_ROTATED.nmd
+debug/transition_dipole_donor.nmd
+debug/transition_dipole_donor_ROTATED.nmd
+
+sent 16,818,362 bytes  received 354 bytes  1,978,672.47 bytes/sec
+total size is 358,581,545  speedup is 21.32

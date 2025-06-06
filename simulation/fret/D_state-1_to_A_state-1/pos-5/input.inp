@@ -1,0 +1,15 @@
+aceptor density: /home/pgrobasillobre/calc/fret/tip-transfer/kong/tip-mols/fig-1d/freq-2.5_ev/tip-d5.0_angs/zn-pc/state-1/pos-5/zn-pc_trans_dens_1.cube
+donor density:   /home/pgrobasillobre/calc/fret/tip-transfer/kong/tip-mols/fig-1d/freq-2.5_ev/tip-d5.0_angs/pt-pc/state-1/pos-5/pt-pc_trans_dens_1.cube
+cutoff: 1.0e-20
+nanoparticle:    /home/pgrobasillobre/calc/fret/tip-transfer/kong/tip-mols/fig-1d/freq-2.5_ev/tip-d5.0_angs/pt-pc/state-1/pos-5/pt-pc_cam-b3lyp_tzp.log  
+spectral overlap: 1.0
+!
+rotation axys: z
+!
+aceptor transition dipole:  -2.983  1.1047  0.0
+aceptor transition dipole align with:  19.98063807  -7.58698157  -21.16555198
+!
+donor transition dipole:  -2.2719  -2.2666  0.0
+donor transition dipole align with:  -2.35577611  -5.20498117  -21.16555198
+!
+debug: 1
