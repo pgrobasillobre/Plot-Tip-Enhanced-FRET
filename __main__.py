@@ -24,7 +24,7 @@ positions = ['pos-4', 'pos-5', 'pos-6'] # These positions are related with fig-1
 #
 # Get directory of the scirpt to extract simulation results
 base_dir = os.path.dirname(__file__)
-results_folder = os.path.join(base_dir, 'simulation')
+results_folder = os.path.join(base_dir, 'data/simulation')
 #
 param = parameters.parameters()
 #

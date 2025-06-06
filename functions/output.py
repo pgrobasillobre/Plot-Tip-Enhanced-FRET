@@ -80,9 +80,9 @@ def plot_fluor_intensities(donor,acceptor,n_pos):
     # Get the directory of this script to access the experimental data files
     base_dir = os.path.dirname(__file__)
     exp_files = [
-        os.path.join(base_dir, "../experiment/exp-pos4.csv"),
-        os.path.join(base_dir, "../experiment/exp-pos5.csv"),
-        os.path.join(base_dir, "../experiment/exp-pos6.csv")
+        os.path.join(base_dir, "../data/experiment/exp-pos4.csv"),
+        os.path.join(base_dir, "../data/experiment/exp-pos5.csv"),
+        os.path.join(base_dir, "../data/experiment/exp-pos6.csv")
     ]
 
     # Load experimental data and find global max
