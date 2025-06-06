@@ -27,12 +27,13 @@ def plot_fluor_intensities(donor,acceptor,n_pos):
     positions = ['Position 4', 'Position 5', 'Position 6']
 
     #
-    # Define plotting options
-    donor_peak    = 1.945 # eV emission peak in experiment
-    acceptor_peak = 1.902 # eV emission peak in experiment
+    # Define peaks at which simulated fluorescence intensities are centered
+    # We consider the tip-perturbed excitation energies of the donor and acceptor
+    donor_peak    = 2.16 # eV emission peak in experiment
+    acceptor_peak = 2.05 # eV emission peak in experiment
     #
-    min_energy = 1.85 # eV
-    max_energy = 2.00 # eV
+    min_energy = 1.99 # eV
+    max_energy = 2.21 # eV
     #
     grid_points = 1000 # For the Gaussian functions
     #
@@ -108,8 +109,7 @@ def plot_fluor_intensities(donor,acceptor,n_pos):
         # Plot
         ax[n][0].set_title(f'{positions[n]}',fontsize=fontsize_titles)
         ax[n][0].plot(exp_data[n][0],exp_data[n][1], color='red', label = '')
-    
-        # Set y-limits and y-ticks as requested
+
         if n == 0 or n == 1:
             ax[n][0].set_ylim(-.05, 1.05)
             ax[n][0].set_yticks(np.arange(0, 1.01, 0.25))
@@ -125,17 +125,6 @@ def plot_fluor_intensities(donor,acceptor,n_pos):
     norm = 0
     for n in range(n_pos):
         #
-        # Set y-limits and y-ticks as requested
-        if n == 0 or n == 1:
-            ax[n][1].set_ylim(-.05, 1.05)
-            ax[n][1].set_yticks(np.arange(0, 1.01, 0.25))
-
-        elif n == 2:
-            ax[n][1].set_ylim(-.000035, 0.00065)
-            ax[n][1].set_yticks(np.arange(0, 0.0007, 0.00015))
-            ax[n][1].yaxis.set_major_formatter(ScalarFormatter(useMathText=True))
-            ax[n][1].ticklabel_format(axis='y', style='sci', scilimits=(0,0))
-
         # Create Gaussian functions for plotting the fluorescence intensities
         donor_gaussian   = calcs.single_gaussian(x_points,grid_points,donor_peak,donor.fluor_int_total[n],    param.fwhm,min_energy,max_energy)
         acceptor_gaussian = calcs.single_gaussian(x_points,grid_points,acceptor_peak,acceptor.fluor_int_total[n],param.fwhm,min_energy,max_energy)
@@ -157,6 +146,20 @@ def plot_fluor_intensities(donor,acceptor,n_pos):
         #
         total_gaussian = total_gaussian/norm
         # 
+            
+        # Set x-ticks, x-limits, y-limits and y-ticks as requested
+        ax[n][1].set_xlim(1.98, 2.22)
+        ax[n][1].set_xticks(np.arange(2.00, 2.21, 0.05))
+        if n == 0 or n == 1:
+            ax[n][1].set_ylim(-.05, 1.05)
+            ax[n][1].set_yticks(np.arange(0, 1.01, 0.25))
+
+        elif n == 2:
+            ax[n][1].set_ylim(-.000035, 0.00065)
+            ax[n][1].set_yticks(np.arange(0, 0.0007, 0.00015))
+            ax[n][1].yaxis.set_major_formatter(ScalarFormatter(useMathText=True))
+            ax[n][1].ticklabel_format(axis='y', style='sci', scilimits=(0,0))
+
         # Plot
         ax[n][1].set_title(f'{positions[n]}',fontsize=fontsize_titles)
         ax[n][1].plot(x_points,total_gaussian, color='red', label = '')

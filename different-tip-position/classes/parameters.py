@@ -12,7 +12,7 @@ class parameters:
         self.au_to_ev         = 27.211324570273
         self.ev_to_au         = 1.0 / self.au_to_ev
         #
-        self.fwhm =  0.005 # FWHM in eV for emission spectra
+        self.fwhm =  0.008 # FWHM in eV for emission spectra
         #
         self.spectral_overlap = 0.02968170793445411 # FretLab allows to introduce this as parameter but
                                                     # I have fixed it to "1" in order to add it within 
