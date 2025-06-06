@@ -8,7 +8,7 @@ from functions import read_outputs, output, calcs
 # ---------------------------------------------------- #
 # ---------------------- INPUTS ---------------------- #
 #
-results_folder = '/home/pablo/Dropbox/posdoc/fret/tip-transfer/kong/tip-min1-mols/fig-1d/calc/fret-2.5_ev/results'
+results_folder = '/home/pablo/Dropbox/posdoc/fret/tip-transfer/kong/tip-mols/fig-1d/calc/freq-2.5_ev/tip-d5.0_angs/results'
 #
 positions = ['pos-4', 'pos-5', 'pos-6'] # These positions are related with fig-1d of the paper: https://doi.org/10.1038/s41565-022-01142-z
 #

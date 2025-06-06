@@ -155,14 +155,15 @@ def plot_fluor_intensities(donor,acceptor,n_pos):
             ax[n][1].set_yticks(np.arange(0, 1.01, 0.25))
 
         elif n == 2:
-            ax[n][1].set_ylim(-.000035, 0.00065)
-            ax[n][1].set_yticks(np.arange(0, 0.0007, 0.00015))
+            ax[n][1].set_ylim(-.00035, 0.0045)
+            ax[n][1].set_yticks(np.arange(0, 0.005, 0.001))
             ax[n][1].yaxis.set_major_formatter(ScalarFormatter(useMathText=True))
-            ax[n][1].ticklabel_format(axis='y', style='sci', scilimits=(0,0))
+            #ax[n][1].ticklabel_format(axis='y', style='sci', scilimits=(0,0))
 
         # Plot
         ax[n][1].set_title(f'{positions[n]}',fontsize=fontsize_titles)
         ax[n][1].plot(x_points,total_gaussian, color='red', label = '')
         #
 
+    #plt.show()
     plt.savefig('fret_tip-position_experiment_vs_simulation.png')
