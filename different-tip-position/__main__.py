@@ -9,7 +9,7 @@ from functions import read_outputs, output, calcs
 # ---------------------------------------------------- #
 # ---------------------- INPUTS ---------------------- #
 #
-results_folder = '/home/pablo/Dropbox/posdoc/fret/tip-transfer/kong/tip-mols/fig-1d/calc/freq-2.5_ev/tip-d5.0_angs/results'
+results_folder = '/home/pablo/Dropbox/posdoc/fret/tip-transfer/kong/tip-min1-mols/fig-1d/calc/fret-2.5_ev/results'
 #
 positions = ['pos-4', 'pos-5', 'pos-6'] # These positions are related with fig-1d of the paper: https://doi.org/10.1038/s41565-022-01142-z
 #
@@ -106,6 +106,6 @@ for position in positions:
     n_pos += 1
 
 # Plot normalized tip-mediated fluorescence Acceptor-Donor intensities
-output.plot_fluor_intensities(donor,acceptor,len(positions),positions)
+output.plot_fluor_intensities(donor,acceptor,len(positions))
 
 
