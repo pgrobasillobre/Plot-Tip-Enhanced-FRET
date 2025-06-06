@@ -24,7 +24,7 @@ def plot_fluor_intensities(donor,acceptor,n_pos):
     """ Plot fluorescence intensities of donor and acceptor"""
 
     # Define subplot titles
-    positions = ['Position 4', 'Position 5', 'Position 6']
+    positions = ['Position A', 'Position B', 'Position C']
 
     #
     # Define peaks at which simulated fluorescence intensities are centered
@@ -44,7 +44,7 @@ def plot_fluor_intensities(donor,acceptor,n_pos):
     fontsize_titles = 17
     #
     xlabel = 'Energy (eV)'
-    ylabel = 'Normalized Fluorescence Intensity (arb. units)'
+    ylabel = 'Fluorescence Intensity (arb. units)'
 
     # Adjust figure and subplots layout    
     fig, ax = plt.subplots(n_pos, 2, figsize=(8, 10))
@@ -165,4 +165,4 @@ def plot_fluor_intensities(donor,acceptor,n_pos):
         ax[n][1].plot(x_points,total_gaussian, color='red', label = '')
         #
 
-    plt.show()
+    plt.savefig('fret_tip-position_experiment_vs_simulation.png')
