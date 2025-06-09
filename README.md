@@ -53,10 +53,10 @@ simulation/
 │   └── state-2/
 │       └── pos-4/5/6/
 ├── fret/
-│   ├── D_state-1_to_A_state-1/
-│   ├── D_state-1_to_A_state-2/
-│   ├── D_state-2_to_A_state-1/
-│   └── D_state-2_to_A_state-2/
+    ├── D_state-1_to_A_state-1/
+    ├── D_state-1_to_A_state-2/
+    ├── D_state-2_to_A_state-1/
+    └── D_state-2_to_A_state-2/
 ```
 
 ### Run the script:
