@@ -71,8 +71,9 @@ python3 Plot-Tip-Enhanced-FRET-change-tip-position
 
 The script generates the following figure comparing experimental and simulated spectra for different tip positions:
 
-![FRET Comparison](./_static/fret_tip-position_experiment_vs_simulation.png)
-
+<p align="center">
+  <img src="./_static/fret_tip-position_experiment_vs_simulation.png" alt="Molecule Labels" width="600"/>
+</p>
 
 ## License
 
