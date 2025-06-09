@@ -25,7 +25,7 @@ The simulation models **tip-mediated fluorescence spectra** where a silver tip i
 
 ![Tip Positions](./_static/tip-positions.png)
 
-Simulated spectra for each tip position are compared to experimental data. All spectra are normalized to the **maximum simulated fluorescence intensity**.
+Simulated spectra for each tip position are compared to experimental data. **All spectra are normalized independently:** for the simulation, the three simulated spectra are normalized with respect to the **maximum simulated fluorescence intensity across all tip positions**; similarly, the three experimental spectra are normalized with respect to the **maximum experimental fluorescence intensity across all tip positions**.
 
 ---
 
