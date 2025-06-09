@@ -33,12 +33,8 @@ Simulated spectra for each tip position are compared to experimental data. **All
 
 ## Data Sources
 
-- **Fluorescence descriptors (TDDFT)**:
-  - Computed using **Amsterdam Modeling Suite**
-  - Reference:
-    **P. Grobas Illobre**, P. Lafiosca, T. Guidone, F. Mazza, T. Giovannini, C. Cappelli
-    *Nanoscale Adv., 2024, 6, 3410*
-    [https://doi.org/10.1039/D4NA00080C](https://doi.org/10.1039/D4NA00080C)
+- **Fluorescence descriptors (TDDFT)** computed using **Amsterdam Modeling Suite**
+  - Reference: **P. Grobas Illobre**, P. Lafiosca, T. Guidone, F. Mazza, T. Giovannini, C. Cappelli *Nanoscale Adv., 2024, 6, 3410* [https://doi.org/10.1039/D4NA00080C](https://doi.org/10.1039/D4NA00080C)
 
 - **Electronic energy transfer rates (FretLab)**:
   - Repository: [https://github.com/pgrobasillobre/FretLab](https://github.com/pgrobasillobre/FretLab)
