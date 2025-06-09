@@ -21,7 +21,7 @@ Below is a schematic of the donor–acceptor molecules:
 </p>
 
 
-The simulation models **tip-mediated fluorescence spectra** where a silver tip is positioned near the donor molecule at three locations (A, B, and C). The donor and acceptor are placed **2.21 nm** apart, while the tip is located **0.5 nm** away from the nearest donor atom.
+The simulation models **tip-mediated fluorescence spectra** where a silver tip is positioned near the donor molecule at three locations (A, B, and C). The donor and acceptor are separated by a metal-metal distance of **2.21 nm** (measured between the central Pt and Zn atoms of the phthalocyanines), while the tip is located **0.5 nm** away from the nearest donor atom.
 
 ![Tip Positions](./_static/tip-positions.png)
 
