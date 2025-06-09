@@ -1,56 +1,86 @@
+# Tip-Enhanced FRET Spectra
+
 ## Objective
 
-The goal of this code is to reproduce **Figure 1d** from the paper: https://doi.org/10.1038/s41565-022-01142-z.
+The goal of this repository is to reproduce **Figure 1d** from the paper:
+**Kong, FF., Tian, XJ., Zhang, Y. et al.**
+**Wavelike electronic energy transfer in donor–acceptor molecular systems through quantum coherence**
+*Nat. Nanotechnol. 17, 729–736 (2022)*
+[https://doi.org/10.1038/s41565-022-01142-z](https://doi.org/10.1038/s41565-022-01142-z)
 
-This code reads fluorescence descriptors (absorption coefficient, radiative decay rate, and non-radiative decay rate), and the electronic energy transfer rates of two phthalocyanine molecules:
-- **Donor**: Pt-Pc
-- **Acceptor**: Zn-Pc
+---
 
 ## Description
 
-In Figure 1d, the Pt-Pc and Zn-Pc molecular distance is fixed, and the microscope tip is placed in three positions on top of the donor molecule (referred to as **positions 4, 5, and 6**). This code plots the tip-mediated fluorescence of both molecules at these three positions.
+This code reads **fluorescence descriptors**—including the absorption coefficient, radiative decay rate, and non-radiative decay rate—computed at the **Time-Dependent Density Functional Theory (TDDFT)** level. It also uses **electronic energy transfer rates** between two phthalocyanine molecules, calculated using **FretLab**.
 
-### Data Sources
+Below is a schematic of the donor–acceptor molecules:
 
-- Fluorescence descriptors are computed using **Time-Dependent Density Functional Theory (TDDFT)** with the **Amsterdam Modeling Suite**.
-  - Reference: https://doi.org/10.1039/D4NA00080C
+![Molecule Labels](./_static/molecules_labels.png)
 
-- Electronic energy transfer rates are computed using the **FretLab** code:
-  - Repository: https://github.com/pgrobasillobre/FretLab
+The simulation models **tip-mediated fluorescence spectra** where a silver tip is positioned near the donor molecule at three locations (A, B, and C). The donor and acceptor are placed **2.21 nm** apart, while the tip is located **0.5 nm** away from the nearest donor atom.
+
+![Tip Positions](./_static/tip-positions.png)
+
+Simulated spectra for each tip position are compared to experimental data. All spectra are normalized to the **maximum simulated fluorescence intensity**.
+
+---
+
+## Data Sources
+
+- **Fluorescence descriptors (TDDFT)**:
+  - Computed using **Amsterdam Modeling Suite**
+  - Reference:
+    **P. Grobas Illobre**, P. Lafiosca, T. Guidone, F. Mazza, T. Giovannini, C. Cappelli
+    *Nanoscale Adv., 2024, 6, 3410*
+    [https://doi.org/10.1039/D4NA00080C](https://doi.org/10.1039/D4NA00080C)
+
+- **Electronic energy transfer rates (FretLab)**:
+  - Repository: [https://github.com/pgrobasillobre/FretLab](https://github.com/pgrobasillobre/FretLab)
+
+---
 
 ## Usage
 
-Run the main script located at:
-```
-different-tip-position/__main__.py
-```
-
-### Required Arguments (to be modified within __main__.py)
-
-- **Path to the results folder**
-- **Names of the folders for different tip positions**
-- **Number of states to consider** (e.g., 2 degenerate states per molecule)
-
-## Folder Structure
-
-An example of a results folder is given in example-results/different-tip-position
+An example simulation is provided in the `data/simulation/` directory. Ensure the following folder structure:
 
 ```
-results/
+simulation/
 ├── tddft/
 │   ├── state-1/
-│   │   └── pos-4/5/6/  # Contains TDDFT results: radiative, non-radiative decay rates, absorption coefficient
+│   │   └── pos-4/5/6/
 │   └── state-2/
 │       └── pos-4/5/6/
 ├── fret/
-    ├── D_state-1_to_A_state-1/
-    ├── D_state-1_to_A_state-2/
-    ├── D_state-2_to_A_state-1/
-    └── D_state-2_to_A_state-2/  # FretLab calculation outputs: electronic energy transfer rates
+│   ├── D_state-1_to_A_state-1/
+│   ├── D_state-1_to_A_state-2/
+│   ├── D_state-2_to_A_state-1/
+│   └── D_state-2_to_A_state-2/
 ```
+
+### Run the script:
+
+```bash
+python3 Plot-Tip-Enhanced-FRET-change-tip-position
+```
+
+---
 
 ## Output
 
-- A plot showing the globally normalized total fluorescence intensity of the donor-acceptor pair mediated by the nanoparticle.
+The script generates the following figure comparing experimental and simulated spectra for different tip positions:
+
+![FRET Comparison](./_static/fret_tip-position_experiment_vs_simulation.png)
 
 
+## License
+
+This code is licensed under the **GNU General Public License v3.0**.
+
+## Funding
+
+Development of this code has been supported by the FARE 2020 program — “Framework per l’attrazione e il rafforzamento delle eccellenze per la ricerca in Italia.”
+
+## Contact
+
+- Email: **pgrobasillobre@gmail.com**
