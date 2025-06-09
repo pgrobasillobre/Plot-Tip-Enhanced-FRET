@@ -16,7 +16,8 @@ This code reads **fluorescence descriptors**—including the absorption coeffici
 
 Below is a schematic of the donor–acceptor molecules:
 
-![Molecule Labels](./_static/molecules_labels.png)
+<img src="./_static/molecules_labels.png" alt="Molecule Labels" width="400"/>
+
 
 The simulation models **tip-mediated fluorescence spectra** where a silver tip is positioned near the donor molecule at three locations (A, B, and C). The donor and acceptor are placed **2.21 nm** apart, while the tip is located **0.5 nm** away from the nearest donor atom.
 
