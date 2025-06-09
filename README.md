@@ -39,6 +39,16 @@ Simulated spectra for each tip position are compared to experimental data. **All
 - **Electronic energy transfer rates (FretLab)**:
   - Repository: [https://github.com/pgrobasillobre/FretLab](https://github.com/pgrobasillobre/FretLab)
 
+
+---
+
+## Requirements
+
+- Python ≥ 3.8
+- numpy
+- matplotlib
+- pandas
+
 ---
 
 ## Usage

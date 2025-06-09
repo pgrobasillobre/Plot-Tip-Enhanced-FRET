@@ -4,7 +4,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
-
 from matplotlib.ticker import ScalarFormatter, FuncFormatter
 from classes import acceptor, donor, parameters
 from functions import calcs
