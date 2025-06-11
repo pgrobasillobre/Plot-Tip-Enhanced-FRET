@@ -58,15 +58,21 @@ An example simulation is provided in the `data/simulation/` directory. Ensure th
 ```
 simulation/
 ├── tddft/
-│   ├── state-1/
-│   │   └── pos-4/5/6/
-│   └── state-2/
-│       └── pos-4/5/6/
+│   ├── pt-pc/
+│   │   └── state-1/2
+│   │       └── pos-4/5/6/*log
+│   └── zn-pc
+│       └── state-1/2
+│           └── pos-4/5/6/*log
 ├── fret/
     ├── D_state-1_to_A_state-1/
+    │   └── pos-4/5/6/*log
     ├── D_state-1_to_A_state-2/
+    │    └── pos-4/5/6/*log
     ├── D_state-2_to_A_state-1/
+    │    └── pos-4/5/6/*log
     └── D_state-2_to_A_state-2/
+        └── pos-4/5/6/*log
 ```
 
 ### Run the script:
